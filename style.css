@@ -1,0 +1,192 @@
+a{
+    text-decoration: none;
+}
+
+:root{
+--bg:#f4f6f8;
+--text:#222;
+--main:#858585;
+--card:#ffffff;
+}
+
+body{
+margin:0;
+font-family: 'Open Sans', sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+body.dark{
+--bg:#121212;
+--text:#eee;
+--card:#1e1e1e;
+}
+
+.main-title {
+color: #222;
+transition: color 0.3s ease;
+}
+
+body.dark .main-title {
+color: #f2f2f2;
+}
+
+.header{
+position:fixed;
+top:0;
+width:100%;
+background-image: url("img/khakasia.jpg");
+background-size:cover;
+background-position: center;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:15px;
+z-index:1000;
+}
+
+.header h1{
+color: rgb(255, 255, 255)
+}
+
+#themeToggle{
+position:absolute;
+left:20px;
+background:none;
+border:none;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+.burger{
+position:absolute;
+right:20px;
+cursor:pointer;
+display:none;
+}
+
+.burger div{
+width:25px;
+height:3px;
+background:white;
+margin:5px;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:250px;
+height:100%;
+background:linear-gradient(270deg,#626d7c,#22262b);
+padding-top:125px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:10px 20px;
+}
+
+main{
+margin-top:100px;
+margin-left:260px;
+padding:20px;
+max-width:1200px;
+margin-right:auto;
+}
+
+.about,.attraction{
+background:var(--card);
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+margin-bottom:40px;
+max-width:1100px;
+margin-left:auto;
+margin-right:auto;
+scroll-margin-top:120px;
+}
+
+.atr-img{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+width:100%;
+}
+
+.main-img{
+width:100%;
+max-width:500px;
+height:300px;
+object-fit:cover;
+border-radius:10px;
+}
+
+footer{
+background:linear-gradient(90deg,#626d7c,#3b3f44);
+color:rgb(97, 81, 81);
+text-align:center;
+padding:20px;
+}
+
+footer a, footer p{
+color:rgb(255, 255, 255);
+text-decoration:none;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+@media(max-width:900px){
+.sidebar{
+left:-250px;
+transition:0.4s;
+}
+
+.sidebar.active{
+left:0;
+}
+
+main{
+margin-left:0;
+padding:15px;
+}
+
+.burger{
+display:block;
+}
+
+.header h1{
+font-size:20px;
+text-align:center;
+}
+}
+
+@media(max-width:1100px){
+
+.atr-img{
+flex-direction:column;
+align-items:center;
+}
+
+.main-img{
+max-width:100%;
+}
+
+}
+@media(max-width:700px){
+
+.atr-img img:nth-child(2){
+display:none;
+}
+
+.main-img{
+height:220px;
+}
+
+}
